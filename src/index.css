@@ -29,10 +29,10 @@ html {
   --color-fg: rgba(210, 220, 250, 0.8);
   --color-fg-strong: hsl(225, 50%, 97%);
   --color-fg-weak: rgba(180, 195, 240, 0.5);
-  --color-accent: hsl(258, 78%, 67%);
-  --color-accent-text: hsl(258, 90%, 78%);
-  --color-soft-accent: hsla(258, 78%, 67%, 12%);
-  --color-on-accent: #fff;
+  --color-accent: hsl(140, 78%, 45%);
+  --color-accent-text: hsl(140, 80%, 55%);
+  --color-soft-accent: hsla(140, 78%, 45%, 12%);
+  --color-on-accent: #000;
   --color-soft-border: rgba(130, 150, 220, 0.12);
   --color-soft: rgba(130, 150, 220, 0.07);
   --color-soft-hover: rgba(130, 150, 220, 0.12);
