@@ -89,21 +89,6 @@ export function Layout(props: LayoutProps) {
           )}
         </header>
 
-        {/* Desktop header (tool pages only) */}
-        {pageTitle != null && (
-          <header
-            class={clsx(
-              "hidden lg:flex",
-              "sticky top-0 z-5 h-12 items-center px-6",
-              "bg-bg-raised border-soft-border border-b",
-            )}
-          >
-            <span class="text-fg-weak text-sm">assorted.tools</span>
-            <span class="text-fg-weak px-2 text-sm">/</span>
-            <span class="text-accent-text text-sm font-bold">{pageTitle}</span>
-          </header>
-        )}
-
         <div class="flex-1">{props.children}</div>
       </main>
     </div>
