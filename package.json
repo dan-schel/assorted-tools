@@ -35,15 +35,5 @@
     "typescript-eslint": "8.59.1",
     "vite": "7.3.2",
     "vitest": "4.1.5"
-  },
-  "author": "dan-schel",
-  "description": "A collection of handy browser-based tools.",
-  "homepage": "https://github.com/dan-schel/assorted-tools",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:dan-schel/assorted-tools.git"
-  },
-  "bugs": {
-    "url": "https://github.com/dan-schel/assorted-tools/issues"
   }
 }
