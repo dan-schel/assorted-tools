@@ -7,21 +7,20 @@ type ToolRoute = {
 export const toolRoutes: ToolRoute[] = [
   {
     path: "/time-zones",
-    title: "Time Zones",
+    title: "Time zones",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Convert ISO8601 formatted times, human formatted times, or Unix timestamps between timezones.",
   },
   {
     path: "/symbols",
     title: "Symbols",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "A list of commonly used symbols (along with their HTML codes), ready to copy and paste.",
   },
   {
     path: "/uuids",
     title: "UUIDs",
-    description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    description: "Generate random UUIDs.",
   },
 ];
 
