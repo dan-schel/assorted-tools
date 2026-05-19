@@ -1,9 +1,10 @@
 import { toolRoutes } from "@/routes";
 import { MingcuteToolLine } from "@/components/icons/MingcuteToolLine";
+import { PageWrapper } from "@/components/PageWrapper";
 
 export default function Home() {
   return (
-    <div class="px-8 py-10">
+    <PageWrapper>
       <div class="mb-10">
         <h1 class="text-fg-strong text-2xl font-bold">assorted.tools</h1>
         <p class="text-fg mt-2 text-sm">
@@ -29,6 +30,6 @@ export default function Home() {
           </li>
         ))}
       </ul>
-    </div>
+    </PageWrapper>
   );
 }
