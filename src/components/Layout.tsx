@@ -82,7 +82,7 @@ export function Layout(props: LayoutProps) {
             <div class="flex h-10 items-center px-5">
               <span class="text-fg-weak text-sm">assorted.tools</span>
               <span class="text-fg-weak px-2 text-sm">/</span>
-              <span class="text-accent-text text-sm font-semibold">
+              <span class="text-accent-text text-sm font-bold">
                 {pageTitle}
               </span>
             </div>
@@ -100,9 +100,7 @@ export function Layout(props: LayoutProps) {
           >
             <span class="text-fg-weak text-sm">assorted.tools</span>
             <span class="text-fg-weak px-2 text-sm">/</span>
-            <span class="text-accent-text text-sm font-semibold">
-              {pageTitle}
-            </span>
+            <span class="text-accent-text text-sm font-bold">{pageTitle}</span>
           </header>
         )}
 

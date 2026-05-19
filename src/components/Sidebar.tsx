@@ -18,7 +18,21 @@ export function Sidebar(props: SidebarProps) {
     >
       <div class="flex flex-col overflow-y-auto py-6">
         <p class="text-fg-strong mb-4 px-4 text-sm font-bold">assorted.tools</p>
-        <ul>
+        <ul class="flex flex-col gap-1">
+          <li>
+            <a
+              href="/"
+              class={clsx(
+                "mx-2 flex h-8 items-center gap-2 rounded-sm px-2 text-sm",
+                props.currentPath === "/"
+                  ? "bg-soft-accent text-accent-text font-bold"
+                  : "text-fg hover:bg-soft-hover active:bg-soft-active",
+              )}
+            >
+              <MingcuteToolLine class="shrink-0 text-base" />
+              <span class="truncate">Home</span>
+            </a>
+          </li>
           {toolRoutes.map((route) => {
             const active = props.currentPath === route.path;
             return (
@@ -27,9 +41,8 @@ export function Sidebar(props: SidebarProps) {
                   href={route.path}
                   class={clsx(
                     "mx-2 flex h-8 items-center gap-2 rounded-sm px-2 text-sm",
-                    "transition-colors duration-100",
                     active
-                      ? "bg-soft-accent text-accent-text font-semibold"
+                      ? "bg-soft-accent text-accent-text font-bold"
                       : "text-fg hover:bg-soft-hover active:bg-soft-active",
                   )}
                 >
