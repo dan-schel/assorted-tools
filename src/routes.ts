@@ -23,8 +23,3 @@ export const toolRoutes: ToolRoute[] = [
     description: "Generate random UUIDs.",
   },
 ];
-
-export function getPageTitle(pathname: string): string | null {
-  const route = toolRoutes.find((r) => r.path === pathname);
-  return route?.title ?? null;
-}
