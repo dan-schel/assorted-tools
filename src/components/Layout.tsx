@@ -26,7 +26,7 @@ export function Layout(props: LayoutProps) {
       class={clsx(
         "min-h-svh",
         "grid grid-cols-[1fr] [grid-template-areas:'main']",
-        "desktop:grid-cols-[240px_1fr] desktop:[grid-template-areas:'sidebar_main']",
+        "desktop:grid-cols-[16rem_1fr] desktop:[grid-template-areas:'sidebar_main']",
       )}
     >
       {/* Backdrop (mobile only) */}

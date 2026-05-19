@@ -18,7 +18,7 @@ export function Sidebar(props: SidebarProps) {
     >
       <div class="flex flex-col overflow-y-auto py-6">
         <p class="text-fg-strong mb-4 px-4 font-bold">assorted.tools</p>
-        <ul class="flex flex-col gap-1">
+        <div class="flex flex-col gap-1">
           <SidebarButton
             href="/"
             title="Home"
@@ -32,7 +32,7 @@ export function Sidebar(props: SidebarProps) {
               isActive={props.currentPath === route.path}
             />
           ))}
-        </ul>
+        </div>
       </div>
     </nav>
   );
@@ -46,19 +46,17 @@ type SidebarButtonProps = {
 
 function SidebarButton(props: SidebarButtonProps) {
   return (
-    <li>
-      <a
-        href={props.href}
-        class={clsx(
-          "mx-2 flex h-8 items-center gap-2 rounded-sm px-2 text-sm",
-          props.isActive
-            ? "bg-soft-accent text-accent-text font-bold"
-            : "text-fg hover:bg-soft-hover active:bg-soft-active",
-        )}
-      >
-        <MingcuteToolLine class="shrink-0 text-base" />
-        <span class="truncate">{props.title}</span>
-      </a>
-    </li>
+    <a
+      href={props.href}
+      class={clsx(
+        "mx-2 flex h-8 items-center gap-2 rounded-sm px-2 text-sm",
+        props.isActive
+          ? "bg-soft-accent text-accent-text font-bold"
+          : "text-fg hover:bg-soft-hover active:bg-soft-active",
+      )}
+    >
+      <MingcuteToolLine class="text-base" />
+      <span>{props.title}</span>
+    </a>
   );
 }
