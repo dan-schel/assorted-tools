@@ -26,7 +26,7 @@ export function Layout(props: LayoutProps) {
       class={clsx(
         "min-h-svh",
         "grid grid-cols-[1fr] [grid-template-areas:'main']",
-        "lg:grid-cols-[240px_1fr] lg:[grid-template-areas:'sidebar_main']",
+        "desktop:grid-cols-[240px_1fr] desktop:[grid-template-areas:'sidebar_main']",
       )}
     >
       {/* Backdrop (mobile only) */}
@@ -41,13 +41,13 @@ export function Layout(props: LayoutProps) {
       {/* Sidebar */}
       <Sidebar
         class={clsx(
-          "z-20 lg:[grid-area:sidebar]",
-          "max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:h-full",
-          "max-lg:w-[min(calc(100vw-3rem),15rem)]",
-          "max-lg:shadow-sidebar max-lg:transition-[translate,opacity,visibility] max-lg:duration-200",
+          "desktop:[grid-area:sidebar] z-20",
+          "max-desktop:fixed max-desktop:top-0 max-desktop:left-0 max-desktop:h-full",
+          "max-desktop:w-[min(calc(100vw-3rem),15rem)]",
+          "max-desktop:shadow-sidebar max-desktop:transition-[translate,opacity,visibility] max-desktop:duration-200",
           sidebarOpen
-            ? "max-lg:visible max-lg:translate-x-0 max-lg:opacity-100"
-            : "max-lg:invisible max-lg:-translate-x-full max-lg:opacity-0",
+            ? "max-desktop:visible max-desktop:translate-x-0 max-desktop:opacity-100"
+            : "max-desktop:invisible max-desktop:-translate-x-full max-desktop:opacity-0",
         )}
         currentPath={path}
       />
@@ -57,7 +57,7 @@ export function Layout(props: LayoutProps) {
         {/* Mobile header */}
         <header
           class={clsx(
-            "sticky top-0 z-5 lg:hidden",
+            "desktop:hidden sticky top-0 z-5",
             "bg-bg-raised border-soft-border flex flex-col border-b",
           )}
         >

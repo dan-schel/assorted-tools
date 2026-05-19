@@ -11,7 +11,7 @@ export default function Home() {
           can remember.
         </p>
       </div>
-      <ul class="grid items-stretch gap-4 lg:grid-cols-3">
+      <ul class="desktop:grid-cols-3 grid items-stretch gap-4">
         {toolRoutes.map((route) => (
           <li key={route.path} class="grid">
             <a

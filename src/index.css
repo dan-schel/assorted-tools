@@ -42,7 +42,7 @@ html {
   --shadow-sidebar: 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
 
   --breakpoint-*: initial;
-  --breakpoint-lg: 60rem;
+  --breakpoint-desktop: 48rem;
 }
 
 @font-face {

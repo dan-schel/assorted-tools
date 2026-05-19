@@ -13,7 +13,7 @@ export function Sidebar(props: SidebarProps) {
       class={clsx(
         props.class,
         "bg-bg-raised border-soft-border flex flex-col border-r",
-        "lg:sticky lg:top-0 lg:h-svh",
+        "desktop:sticky desktop:top-0 desktop:h-svh",
       )}
     >
       <div class="flex flex-col overflow-y-auto py-6">
