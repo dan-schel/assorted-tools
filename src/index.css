@@ -43,7 +43,7 @@ html {
 
   --breakpoint-*: initial;
   --breakpoint-desktop: 48rem;
-  --breakpoint-widescreen: 64rem;
+  --breakpoint-widescreen: 96rem;
 }
 
 @font-face {

@@ -11,7 +11,8 @@ export function Sidebar(props: SidebarProps) {
   const { path } = useLocation();
 
   return (
-    <div class="flex flex-col gap-4 overflow-y-auto px-4">
+    <div class="flex flex-col gap-8 overflow-y-auto px-4">
+      <h1 class="text-fg-strong px-4 text-2xl font-bold">assorted.tools</h1>
       <div class="flex flex-col gap-2">
         <SidebarButton href="/" title="Home" isActive={path === "/"} />
         {toolRoutes.map((route) => (
@@ -38,7 +39,7 @@ function SidebarButton(props: SidebarButtonProps) {
     <a
       href={props.href}
       class={clsx(
-        "flex h-8 items-center gap-2 rounded-sm px-2 text-sm",
+        "flex h-8 items-center gap-2 rounded-sm px-4 text-sm",
         props.isActive
           ? "bg-soft-accent text-accent-text font-bold"
           : "text-fg hover:bg-soft-hover active:bg-soft-active",

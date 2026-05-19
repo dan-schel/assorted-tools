@@ -19,19 +19,14 @@ export function Layout(props: LayoutProps) {
   }, [path]);
 
   return (
-    <div class="not-widescreen:grid-cols-[0_1fr_0] widescreen:grid-cols-[1fr_64rem_1fr] grid min-h-svh">
-      <div class="desktop:grid-cols-[16rem_1fr] col-2 grid grid-rows-[auto_1fr]">
-        <div class="col-span-2 row-1 ps-4 pe-8">
-          <div class="border-soft-border grid border-b pt-8 pb-4">
-            <h1 class="text-fg-strong text-2xl font-bold">assorted.tools</h1>
-          </div>
-        </div>
-        <div class="col-1 row-2 grid">
-          <div class="border-soft-border grid border-e py-10">
+    <div class="widescreen:grid-cols-[96rem_1fr] grid min-h-svh">
+      <div class="desktop:grid-cols-[20rem_1fr] grid">
+        <div class="not-desktop:hidden col-1 grid py-10">
+          <div class="border-soft-border grid border-e">
             <Sidebar />
           </div>
         </div>
-        <div class="col-2 row-2 grid">{props.children}</div>
+        <div class="desktop:col-2 grid">{props.children}</div>
       </div>
     </div>
   );
