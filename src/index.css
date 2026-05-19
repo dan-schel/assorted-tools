@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    flex-shrink: 0;
+  }
+
+  /* Always use pointer cursor on buttons. */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  body {
+    background-color: var(--color-bg);
+  }
+}
+
+html {
+  min-width: 20rem;
+}
+
+@theme {
+  --font-sans: "Mona Sans", sans-serif;
+
+  --color-*: initial;
+  --color-bg: hsl(225, 14%, 8%);
+  --color-bg-raised: hsl(225, 14%, 11%);
+  --color-fg: rgba(210, 220, 250, 0.8);
+  --color-fg-strong: hsl(225, 50%, 97%);
+  --color-fg-weak: rgba(180, 195, 240, 0.5);
+  --color-accent: hsl(258, 78%, 67%);
+  --color-accent-text: hsl(258, 90%, 78%);
+  --color-soft-accent: hsla(258, 78%, 67%, 12%);
+  --color-on-accent: #fff;
+  --color-soft-border: rgba(130, 150, 220, 0.12);
+  --color-soft: rgba(130, 150, 220, 0.07);
+  --color-soft-hover: rgba(130, 150, 220, 0.12);
+  --color-soft-active: rgba(130, 150, 220, 0.18);
+  --color-shadow: rgba(0, 0, 0, 0.6);
+
+  --shadow-*: initial;
+  --shadow-sidebar: 0rem 0rem 1.5rem 0.5rem rgba(0, 0, 0, 0.5);
+
+  --breakpoint-*: initial;
+  --breakpoint-lg: 60rem;
+}
+
+@font-face {
+  font-family: "Mona Sans";
+  font-weight: 200 900;
+  font-display: swap;
+  src: url(/mona-sans.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
