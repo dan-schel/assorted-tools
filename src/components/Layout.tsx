@@ -1,10 +1,9 @@
-import clsx from "clsx";
 import type { ComponentChildren } from "preact";
 import { useState, useEffect } from "preact/hooks";
 import { useLocation } from "preact-iso";
 import { Sidebar } from "@/components/Sidebar";
 import { MingcuteMenuLine } from "@/components/icons/MingcuteMenuLine";
-import { TimesIcon } from "@/components/icons/TimesIcon";
+import { MingcuteCloseLine } from "@/components/icons/MingcuteCloseLine";
 
 type LayoutProps = {
   children: ComponentChildren;
@@ -19,15 +18,11 @@ export function Layout(props: LayoutProps) {
   }, [path]);
 
   return (
-    <div class="widescreen:grid-cols-[96rem_1fr] grid min-h-svh">
-      <div class="desktop:grid-cols-[20rem_1fr] grid">
-        <div class="not-desktop:hidden col-1 grid py-10">
-          <div class="border-soft-border grid border-e">
-            <Sidebar />
-          </div>
-        </div>
-        <div class="desktop:col-2 grid">{props.children}</div>
+    <div class="desktop:grid-cols-[16rem_1fr] grid min-h-svh">
+      <div class="not-desktop:hidden border-soft-border col-1 grid border-e py-8">
+        <Sidebar />
       </div>
+      <div class="desktop:col-2 grid">{props.children}</div>
     </div>
   );
 }
@@ -45,7 +40,7 @@ function SidebarToggleButton(props: SidebarToggleButtonProps) {
       onClick={props.onToggle}
     >
       {props.open ? (
-        <TimesIcon class="text-lg" />
+        <MingcuteCloseLine class="text-lg" />
       ) : (
         <MingcuteMenuLine class="text-lg" />
       )}

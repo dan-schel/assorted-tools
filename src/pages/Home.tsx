@@ -1,6 +1,6 @@
-import { toolRoutes } from "@/routes";
-import { MingcuteToolLine } from "@/components/icons/MingcuteToolLine";
+import type { Icon } from "@/components/icons/types";
 import { PageWrapper } from "@/components/PageWrapper";
+import { tools } from "@/tools";
 
 export default function Home() {
   return (
@@ -9,13 +9,14 @@ export default function Home() {
         A collection of useful tools that work just the way I want, at a URL I
         can remember.
       </p>
-      <div class="desktop:grid-cols-3 mt-8 grid items-stretch gap-4">
-        {toolRoutes.map((route) => (
+      <div class="widescreen:grid-cols-3 mt-8 grid max-w-5xl items-stretch gap-4">
+        {tools.map((route) => (
           <ToolButton
             key={route.path}
             href={route.path}
             title={route.title}
             description={route.description}
+            icon={route.icon}
           />
         ))}
       </div>
@@ -27,6 +28,7 @@ type ToolButtonProps = {
   href: string;
   title: string;
   description: string;
+  icon: Icon;
 };
 
 function ToolButton(props: ToolButtonProps) {
@@ -36,7 +38,7 @@ function ToolButton(props: ToolButtonProps) {
       class="border-soft-border hover:bg-soft-hover active:bg-soft-active flex flex-col gap-4 rounded-sm border p-5"
     >
       <div class="flex items-center gap-2">
-        <MingcuteToolLine class="text-accent text-base" />
+        <props.icon class="text-accent text-base" />
         <span class="text-fg-strong text-sm font-semibold">{props.title}</span>
       </div>
       <p class="text-fg text-sm">{props.description}</p>
