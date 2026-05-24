@@ -2,7 +2,7 @@
   "name": "assorted-tools",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "tsc -p tsconfig.json --noEmit && eslint . --max-warnings 0 && knip",
     "test": "vitest --run",
