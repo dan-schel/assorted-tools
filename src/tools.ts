@@ -6,6 +6,9 @@ import type { Icon } from "./components/icons/types";
 import { IconamoonNumber2Square } from "@/components/icons/IconamoonNumber2Square";
 import { TablerBallTennis } from "@/components/icons/TablerBallTennis";
 import { MingcuteCashLine } from "@/components/icons/MingcuteCashLine";
+import { unique } from "@dan-schel/js-utils";
+import { MingcutePaletteLine } from "@/components/icons/MingcutePaletteLine";
+import { MingcuteCalendarLine } from "@/components/icons/MingcuteCalendarLine";
 
 type Tool = {
   readonly title: string;
@@ -16,11 +19,11 @@ type Tool = {
 };
 
 type ToolGroup = {
-  readonly group: string | null;
+  readonly group: string;
   readonly tools: readonly Tool[];
 };
 
-export const tools: readonly Tool[] = [
+const tools: readonly Tool[] = [
   {
     title: "Time zones",
     path: "/time-zones",
@@ -52,10 +55,25 @@ export const tools: readonly Tool[] = [
     group: null,
   },
   {
+    title: "Colour formats",
+    path: "/color-formats",
+    icon: MingcutePaletteLine,
+    description: "Convert colours to and from RGB and HSL.",
+    group: null,
+  },
+  {
+    title: "Uni timetables",
+    path: "/uni-timetables",
+    icon: MingcuteCalendarLine,
+    description: "Convert colours to and from RGB and HSL.",
+    group: null,
+  },
+  {
     title: "Generic",
     path: "/generic-scores",
     icon: IconamoonNumber2Square,
-    description: "Track points",
+    description:
+      "Track a number for each player which can be incremented and decremented.",
     group: "Scoreboards",
   },
   {
@@ -73,3 +91,24 @@ export const tools: readonly Tool[] = [
     group: "Scoreboards",
   },
 ];
+
+export const toolGroups: readonly ToolGroup[] = unique(
+  tools.map((t) => t.group),
+)
+  .map((g) => ({
+    group: g,
+    tools: tools
+      .filter((t) => t.group === g)
+      .sort((a, b) => a.title.localeCompare(b.title)),
+  }))
+  .sort((a, b) => {
+    // Ungrouped tools are grouped first.
+    if (a.group === null) return -1;
+    if (b.group === null) return 1;
+
+    return a.group.localeCompare(b.group);
+  })
+  .map((group) => ({
+    ...group,
+    group: group.group ?? "Tools",
+  }));

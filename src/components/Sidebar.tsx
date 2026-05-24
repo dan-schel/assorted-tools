@@ -1,8 +1,9 @@
 import clsx from "clsx";
-import { tools } from "@/tools";
+import { toolGroups } from "@/tools";
 import { useLocation } from "preact-iso";
 import { MingcuteHome4Line } from "./icons/MingcuteHome4Line";
 import type { Icon } from "./icons/types";
+import { Fragment } from "preact/jsx-runtime";
 
 type SidebarProps = {
   class?: string;
@@ -23,15 +24,19 @@ export function Sidebar(props: SidebarProps) {
           isActive={path === "/"}
           icon={MingcuteHome4Line}
         />
-        <p class="text-fg-weak mx-2 mt-6 mb-2 text-sm">Tools</p>
-        {tools.map((route) => (
-          <SidebarButton
-            key={route.path}
-            href={route.path}
-            title={route.title}
-            isActive={path === route.path}
-            icon={route.icon}
-          />
+        {toolGroups.map((group) => (
+          <Fragment key={group}>
+            <p class="text-fg-weak mx-2 mt-8 mb-2 text-sm">{group.group}</p>
+            {group.tools.map((route) => (
+              <SidebarButton
+                key={route.path}
+                href={route.path}
+                title={route.title}
+                isActive={path === route.path}
+                icon={route.icon}
+              />
+            ))}
+          </Fragment>
         ))}
       </div>
     </div>

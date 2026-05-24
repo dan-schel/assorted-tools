@@ -1,6 +1,7 @@
 import type { Icon } from "@/components/icons/types";
 import { PageWrapper } from "@/components/PageWrapper";
-import { tools } from "@/tools";
+import { toolGroups } from "@/tools";
+import { Fragment } from "preact/jsx-runtime";
 
 export default function Home() {
   return (
@@ -9,17 +10,22 @@ export default function Home() {
         A collection of useful tools that work just the way I want, at a URL I
         can remember.
       </p>
-      <div class="widescreen:grid-cols-3 mt-8 grid max-w-5xl items-stretch gap-4">
-        {tools.map((route) => (
-          <ToolButton
-            key={route.path}
-            href={route.path}
-            title={route.title}
-            description={route.description}
-            icon={route.icon}
-          />
-        ))}
-      </div>
+      {toolGroups.map((group) => (
+        <Fragment key={group.group}>
+          <p class="text-fg mt-12 text-sm">{group.group}</p>
+          <div class="widescreen:grid-cols-3 mt-4 grid max-w-5xl items-stretch gap-4">
+            {group.tools.map((route) => (
+              <ToolButton
+                key={route.path}
+                href={route.path}
+                title={route.title}
+                description={route.description}
+                icon={route.icon}
+              />
+            ))}
+          </div>
+        </Fragment>
+      ))}
     </PageWrapper>
   );
 }
@@ -39,7 +45,7 @@ function ToolButton(props: ToolButtonProps) {
     >
       <div class="flex items-center gap-2">
         <props.icon class="text-accent text-base" />
-        <span class="text-fg-strong text-sm font-semibold">{props.title}</span>
+        <span class="text-fg-strong text-sm font-bold">{props.title}</span>
       </div>
       <p class="text-fg text-sm">{props.description}</p>
     </a>
