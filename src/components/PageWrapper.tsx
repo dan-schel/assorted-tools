@@ -9,9 +9,9 @@ type PageWrapperProps = {
 
 export function PageWrapper(props: PageWrapperProps) {
   return (
-    <div class={clsx("flex flex-col px-8 py-10", props.class)}>
+    <div class={clsx("not-desktop:pt-8 flex flex-col px-8 py-10", props.class)}>
       {props.title != null && (
-        <h1 class="text-fg-strong text-2xl font-bold">{props.title}</h1>
+        <p class="text-fg-strong text-2xl font-bold">{props.title}</p>
       )}
       {props.children}
     </div>

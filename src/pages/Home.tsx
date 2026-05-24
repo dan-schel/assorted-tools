@@ -41,7 +41,7 @@ function ToolButton(props: ToolButtonProps) {
   return (
     <a
       href={props.href}
-      class="border-soft-border hover:bg-soft-hover active:bg-soft-active flex flex-col gap-4 rounded-sm border p-5"
+      class="border-soft-border hover:bg-soft-hover active:bg-soft-active flex flex-col gap-2 rounded-sm border p-5"
     >
       <div class="flex items-center gap-2">
         <props.icon class="text-accent text-base" />

@@ -14,9 +14,9 @@ export function Sidebar(props: SidebarProps) {
 
   return (
     <div class={clsx(props.class, "flex flex-col gap-4 px-4")}>
-      <h1 class="text-fg-strong self-center text-center text-xl font-bold">
+      <p class="text-fg-strong self-center text-center text-xl font-bold">
         assorted.tools
-      </h1>
+      </p>
       <div class="flex flex-col">
         <SidebarButton
           href="/"
