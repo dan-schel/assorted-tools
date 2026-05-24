@@ -65,7 +65,7 @@ const tools: readonly Tool[] = [
     title: "Uni timetables",
     path: "/uni-timetables",
     icon: MingcuteCalendarLine,
-    description: "Convert colours to and from RGB and HSL.",
+    description: "Visualise different timeslots for each class.",
     group: null,
   },
   {
