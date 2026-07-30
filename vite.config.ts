@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import preact from "@preact/preset-vite";
 import tailwindcss from "@tailwindcss/vite";
-import path from "path";
+import path, { resolve } from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -9,6 +9,14 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        fallback: resolve(__dirname, "404.html"),
+      },
     },
   },
 });
