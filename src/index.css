@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    flex-shrink: 0;
+  }
+
+  /* Always use pointer cursor on buttons. */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  body {
+    background-color: var(--color-bg);
+  }
+}
+
+html {
+  min-width: 20rem;
+}
+
+@theme {
+  --*: initial;
+  --default-font-family: "Mona Sans", system-ui, sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  --spacing: 0.25rem;
+
+  /* If changing, update `textSizes` in web/components/core/TextBoxTrim.tsx. */
+  --text-sm: 0.75rem;
+  --text-md: 0.9rem;
+  --text-mdlg: 1rem;
+  --text-lg: 1.1rem;
+  --text-xl: 1.25rem;
+
+  --text-icon-md: 1rem;
+  --text-icon-mdlg: 1.1rem;
+  --text-icon-lg: 1.25rem;
+  --text-icon-xl: 1.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  --radius-sm: 0.25rem;
+
+  --breakpoint-desktop: 48rem;
+  --breakpoint-widescreen: 64rem;
+
+  --color-*: initial;
+  --color-bg: hsl(220, 15%, 8%);
+  --color-bg-raised: hsl(220, 25%, 14%);
+  --color-fg: hsla(220, 50%, 80%, 80%);
+  --color-fg-strong: white;
+  --color-fg-weak: hsla(220, 80%, 80%, 60%);
+
+  --color-accent: hsl(140, 75%, 45%);
+  --color-accent-hover: hsl(140, 75%, 50%);
+  --color-accent-active: hsl(140, 75%, 40%);
+  --color-accent-text: hsl(140, 80%, 55%);
+  --color-soft-accent: hsla(140, 75%, 45%, 10%);
+  --color-on-accent: black;
+
+  --color-soft: hsla(220, 100%, 80%, 12%);
+  --color-soft-hover: hsla(220, 100%, 80%, 16%);
+  --color-soft-active: hsla(220, 100%, 80%, 8%);
+  --color-soft-border: hsla(220, 100%, 80%, 20%);
+  --color-soft-border-disabled: hsla(220, 100%, 80%, 12%);
+
+  --color-placeholder: hsla(220, 100%, 86%, 30%);
+  --color-field-border: hsla(220, 100%, 90%, 50%);
+  --color-shadow: rgba(0, 0, 0, 60%);
+  --color-shadow-weak: rgba(0, 0, 0, 20%);
+
+  /* TODO: Adjust these colors! */
+  --color-error: hsl(0, 70%, 65%);
+  --color-error-hover: hsl(0, 70%, 70%);
+  --color-error-active: hsl(0, 70%, 60%);
+  --color-error-text: hsl(0, 100%, 75%);
+  --color-soft-error: hsla(0, 100%, 65%, 15%);
+  --color-on-error: #000000;
+
+  --color-warning: hsl(40, 70%, 60%);
+  --color-warning-hover: hsl(40, 70%, 70%);
+  --color-warning-active: hsl(40, 70%, 55%);
+  --color-warning-text: hsl(40, 100%, 75%);
+  --color-soft-warning: hsla(40, 100%, 65%, 15%);
+  --color-on-warning: #000000;
+
+  /* TODO: Remove these, since the accent is already green? */
+  --color-success: hsl(130, 60%, 60%);
+  --color-success-hover: hsl(130, 60%, 70%);
+  --color-success-active: hsl(130, 60%, 55%);
+  --color-success-text: hsl(130, 60%, 75%);
+  --color-soft-success: hsla(130, 100%, 60%, 10%);
+  --color-on-success: #000000;
+
+  --animate-placeholder-pulse: placeholder-pulse 1s ease-in-out infinite;
+  @keyframes placeholder-pulse {
+    0%,
+    100% {
+      opacity: 50%;
+    }
+    50% {
+      opacity: 100%;
+    }
+  }
+
+  --shadow-*: initial;
+  --shadow-sidebar: 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+@font-face {
+  font-family: "Mona Sans";
+  font-weight: 200 900;
+  font-display: swap;
+  src: url(/mona-sans.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Fira Code";
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(/fira-code.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}

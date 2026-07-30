@@ -1,0 +1,61 @@
+name: CI
+
+on: push
+
+jobs:
+  format:
+    name: Formatted correctly
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.15.0
+      - name: Install modules
+        run: npm ci
+      - name: Run formatting
+        run: npm run format-check
+  lint:
+    name: No lint errors
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.15.0
+      - name: Install modules
+        run: npm ci
+      - name: Run linting
+        run: npm run lint
+  test:
+    name: Unit tests pass
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.15.0
+      - name: Install modules
+        run: npm ci
+      - name: Run tests
+        run: npm run test-coverage
+      - uses: codecov/codecov-action@v6.0.0
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: dan-schel/assorted-tools
+  build:
+    name: Builds successfully
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.15.0
+      - name: Install modules
+        run: npm ci
+      - name: Run build
+        run: npm run build
