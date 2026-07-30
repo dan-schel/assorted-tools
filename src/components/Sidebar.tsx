@@ -29,7 +29,7 @@ export function Sidebar(props: SidebarProps) {
           icon={MingcuteHome4Line}
         />
         {toolGroups.map((group) => (
-          <Column key={group} class="gap-2">
+          <Column key={group} class="gap-1">
             <TextBlock style="weak" class="mb-2 ml-2">
               {group.group}
             </TextBlock>
