@@ -1,4 +1,4 @@
-import type { Icon } from "@/components/icons/types";
+import type { Icon } from "@/components/icons/type";
 import { PageWrapper } from "@/components/PageWrapper";
 import { toolGroups } from "@/tools";
 import { Fragment } from "preact/jsx-runtime";
@@ -6,14 +6,14 @@ import { Fragment } from "preact/jsx-runtime";
 export default function Home() {
   return (
     <PageWrapper title="assorted.tools">
-      <p class="text-fg mt-2 text-sm">
+      <p class="text-fg mt-4 text-sm">
         A collection of useful tools that work just the way I want, at a URL I
         can remember.
       </p>
       {toolGroups.map((group) => (
         <Fragment key={group.group}>
           <p class="text-fg mt-12 text-sm">{group.group}</p>
-          <div class="widescreen:grid-cols-3 mt-4 grid max-w-5xl items-stretch gap-4">
+          <div class="widescreen:grid-cols-3 mt-4 grid max-w-240 items-stretch gap-4">
             {group.tools.map((route) => (
               <ToolButton
                 key={route.path}

@@ -10,7 +10,7 @@ import { Layout } from "@/components/Layout";
 import "@/index.css";
 
 const Home = lazy(() => import("@/pages/Home"));
-const Symbols = lazy(() => import("@/pages/Symbols"));
+const IpAddress = lazy(() => import("@/pages/IpAddress"));
 const Uuids = lazy(() => import("@/pages/Uuids"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
@@ -21,7 +21,7 @@ export function App() {
         <ErrorBoundary>
           <Router>
             <Route path="/" component={Home} />
-            <Route path="/symbols" component={Symbols} />
+            <Route path="/ip-address" component={IpAddress} />
             <Route path="/uuids" component={Uuids} />
             <Route default component={NotFound} />
           </Router>

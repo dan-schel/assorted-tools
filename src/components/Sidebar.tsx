@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { toolGroups } from "@/tools";
 import { useLocation } from "preact-iso";
 import { MingcuteHome4Line } from "./icons/MingcuteHome4Line";
-import type { Icon } from "./icons/types";
+import type { Icon } from "./icons/type";
 import { Fragment } from "preact/jsx-runtime";
 
 type SidebarProps = {
