@@ -60,9 +60,9 @@ html {
   --color-soft-accent: hsla(140, 75%, 45%, 10%);
   --color-on-accent: black;
 
-  --color-soft: hsla(220, 100%, 80%, 20%);
-  --color-soft-hover: hsla(220, 100%, 80%, 10%);
-  --color-soft-active: hsla(220, 100%, 80%, 15%);
+  --color-soft: hsla(220, 100%, 80%, 12%);
+  --color-soft-hover: hsla(220, 100%, 80%, 16%);
+  --color-soft-active: hsla(220, 100%, 80%, 8%);
   --color-soft-border: hsla(220, 100%, 80%, 20%);
   --color-soft-border-disabled: hsla(220, 100%, 80%, 12%);
 

@@ -37,29 +37,31 @@ export default function IpAddress() {
 
   return (
     <PageWrapper title="IP Address">
-      <TextBlock class="mt-6">
-        Your current IP address(es), as detected by{" "}
-        <LinkText href="https://www.ipify.org/">ipify.org</LinkText>:
-      </TextBlock>
-      <IpAddressValue
-        class="mt-8"
-        label="IPv4 address"
-        value={result?.ipv4 ?? null}
-        loading={result == null}
-      />
-      <IpAddressValue
-        class="mt-4"
-        label="IPv6 address"
-        value={result?.ipv6 ?? null}
-        loading={result == null}
-      />
-      <Button
-        text="Refresh"
-        icon={MingcuteRefresh3Line}
-        onClick={triggerFetch}
-        theme="outlined"
-        class="mt-8 self-start"
-      />
+      <Column class="mt-6 gap-8">
+        <TextBlock>
+          Your current IP address(es), as detected by{" "}
+          <LinkText href="https://www.ipify.org/">ipify.org</LinkText>:
+        </TextBlock>
+        <Column class="gap-4">
+          <IpAddressValue
+            label="IPv4 address"
+            value={result?.ipv4 ?? null}
+            loading={result == null}
+          />
+          <IpAddressValue
+            label="IPv6 address"
+            value={result?.ipv6 ?? null}
+            loading={result == null}
+          />
+        </Column>
+        <Button
+          text="Refresh"
+          icon={MingcuteRefresh3Line}
+          onClick={triggerFetch}
+          theme="outlined"
+          class="self-start"
+        />
+      </Column>
     </PageWrapper>
   );
 }

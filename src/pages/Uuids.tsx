@@ -12,11 +12,13 @@ import { useState } from "preact/hooks";
 export default function Uuids() {
   return (
     <PageWrapper title="UUIDs">
-      <TextBlock class="mt-6">Generate random UUIDs (v4).</TextBlock>
-      <Column class="mt-8 gap-4">
-        {repeat("", 1).map((_, i) => (
-          <UuidValue key={i} />
-        ))}
+      <Column class="mt-6 gap-8">
+        <TextBlock>Generate random UUIDs (v4).</TextBlock>
+        <Column class="gap-4">
+          {repeat("", 1).map((_, i) => (
+            <UuidValue key={i} />
+          ))}
+        </Column>
       </Column>
     </PageWrapper>
   );

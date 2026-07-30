@@ -24,7 +24,7 @@ type ToolGroup = {
   readonly tools: readonly Tool[];
 };
 
-const listUnfinishedTools = false;
+const listUnfinishedTools = true;
 
 const tools: readonly (Tool | false)[] = [
   {
