@@ -35,6 +35,7 @@ html {
   --text-xl: 1.25rem;
 
   --text-icon-md: 1rem;
+  --text-icon-mdlg: 1.1rem;
   --text-icon-lg: 1.25rem;
   --text-icon-xl: 1.5rem;
 
@@ -86,6 +87,7 @@ html {
   --color-soft-warning: hsla(40, 100%, 65%, 15%);
   --color-on-warning: #000000;
 
+  /* TODO: Remove these, since the accent is already green? */
   --color-success: hsl(130, 60%, 60%);
   --color-success-hover: hsl(130, 60%, 70%);
   --color-success-active: hsl(130, 60%, 55%);

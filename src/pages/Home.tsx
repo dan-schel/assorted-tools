@@ -48,7 +48,7 @@ function ToolButton(props: ToolButtonProps) {
     <OutlinedButtonHousing href={props.href} class="p-6">
       <Column class="gap-4">
         <Row class="gap-2" yAlign="center">
-          <props.icon class="text-accent text-icon-md" />
+          <props.icon class="text-accent text-icon-mdlg" />
           <TextBlock style="strong">{props.title}</TextBlock>
         </Row>
         <TextBlock>{props.description}</TextBlock>

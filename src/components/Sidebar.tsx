@@ -3,7 +3,11 @@ import { toolGroups } from "@/tools";
 import { useLocation } from "preact-iso";
 import { MingcuteHome4Line } from "./icons/MingcuteHome4Line";
 import type { Icon } from "./icons/type";
-import { Fragment } from "preact/jsx-runtime";
+import { Column } from "@/components/core/Column";
+import { TextBlock } from "@/components/core/TextBlock";
+import { HoverButtonHousing } from "@/components/button/housings/HoverButtonHousing";
+import { Row } from "@/components/core/Row";
+import { SoftAccentButtonHousing } from "@/components/button/housings/SoftAccentButtonHousing";
 
 type SidebarProps = {
   class?: string;
@@ -13,11 +17,11 @@ export function Sidebar(props: SidebarProps) {
   const { path } = useLocation();
 
   return (
-    <div class={clsx(props.class, "flex flex-col gap-4 px-4")}>
-      <p class="text-fg-strong self-center text-center text-xl font-bold">
+    <Column class={clsx(props.class, "gap-8 px-4")}>
+      <TextBlock style="title" align="center" class="self-center">
         assorted.tools
-      </p>
-      <div class="flex flex-col">
+      </TextBlock>
+      <Column class="gap-8">
         <SidebarButton
           href="/"
           title="Home"
@@ -25,8 +29,10 @@ export function Sidebar(props: SidebarProps) {
           icon={MingcuteHome4Line}
         />
         {toolGroups.map((group) => (
-          <Fragment key={group}>
-            <p class="text-fg-weak mx-2 mt-8 mb-2 text-sm">{group.group}</p>
+          <Column key={group} class="gap-2">
+            <TextBlock style="weak" class="mb-2 ml-2">
+              {group.group}
+            </TextBlock>
             {group.tools.map((route) => (
               <SidebarButton
                 key={route.path}
@@ -36,10 +42,10 @@ export function Sidebar(props: SidebarProps) {
                 icon={route.icon}
               />
             ))}
-          </Fragment>
+          </Column>
         ))}
-      </div>
-    </div>
+      </Column>
+    </Column>
   );
 }
 
@@ -51,18 +57,16 @@ type SidebarButtonProps = {
 };
 
 function SidebarButton(props: SidebarButtonProps) {
+  const Housing = props.isActive ? SoftAccentButtonHousing : HoverButtonHousing;
+
   return (
-    <a
-      href={props.href}
-      class={clsx(
-        "flex h-8 items-center gap-2 rounded-sm px-2 text-sm",
-        props.isActive
-          ? "bg-soft-accent text-accent-text font-bold"
-          : "text-fg hover:bg-soft-hover active:bg-soft-active",
-      )}
-    >
-      <props.icon class="text-base" />
-      <span>{props.title}</span>
-    </a>
+    <Housing href={props.href}>
+      <Row class="h-8 gap-2 px-2" yAlign="center">
+        <props.icon class="text-fg text-icon-mdlg" />
+        <TextBlock style={props.isActive ? "strong" : "regular"}>
+          {props.title}
+        </TextBlock>
+      </Row>
+    </Housing>
   );
 }
