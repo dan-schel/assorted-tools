@@ -1,1 +1,0 @@
-import{u as e,T as t,c as n,C as i}from"./index-DxPT8Ucc.js";function a(l){return e(i,{class:n("not-desktop:pt-8 flex flex-col px-8 py-10",l.class),xAlign:l.xAlign,yAlign:l.yAlign,children:[l.title!=null&&e(t,{style:"title",children:l.title}),l.children]})}export{a as P};
